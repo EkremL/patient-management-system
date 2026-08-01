@@ -1,0 +1,15 @@
+### Update the patient
+PUT http://localhost:4000/patients/d4991f84-6af2-4989-91dd-4897a9206602
+Content-Type: application/json
+
+{
+  "name": "Ekrem2",
+  "sur_name": "Lale",
+  "gender": "Male",
+  "email": "ekrem2@gmail.com",
+  "address": "123 main street22",
+  "date_of_birth": "2001-07-19",
+  "registered_date": "2026-07-25"
+}
+
+###

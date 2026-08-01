@@ -1,13 +1,12 @@
 package com.pm.patientservice.mapper;
 
 import com.pm.patientservice.dto.request.PatientCreateRequestDto;
+import com.pm.patientservice.dto.request.PatientUpdateRequestDto;
 import com.pm.patientservice.dto.response.PatientCreateResponseDto;
 import com.pm.patientservice.dto.response.PatientResponseDto;
+import com.pm.patientservice.dto.response.PatientUpdateResponseDto;
 import com.pm.patientservice.entities.Patient;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingConstants;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
 import java.util.List;
 
@@ -31,4 +30,13 @@ public interface PatientMapper {
 
     @Mapping(target = "message", constant = "Patient created successfully!")
     PatientCreateResponseDto toCreateResponseDto(Patient patient);
+
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "dateOfBirth", source = "dateOfBirth", dateFormat = "yyyy-MM-dd")
+    @Mapping(target = "registeredDate", source = "registeredDate", dateFormat = "yyyy-MM-dd")
+    void updateEntity(PatientUpdateRequestDto requestDto, @MappingTarget Patient patient);
+
+    @Mapping(target = "message", constant = "Patient updated successfully!")
+    PatientUpdateResponseDto toUpdateResponseDto(Patient patient);
 }
+

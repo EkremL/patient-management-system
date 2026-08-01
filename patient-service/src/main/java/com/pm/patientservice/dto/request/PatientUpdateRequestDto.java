@@ -1,7 +1,6 @@
 package com.pm.patientservice.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.pm.patientservice.dto.validators.CreatePatientValidatorGroup;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -16,7 +15,7 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PatientCreateRequestDto {
+public class PatientUpdateRequestDto {
     @NotBlank(message = "Name is required")
     @Size(max = 100, message = "Name cannot exceed 100 characters")
     private String name;
@@ -42,7 +41,7 @@ public class PatientCreateRequestDto {
     @JsonProperty("date_of_birth")
     private String dateOfBirth;
 
-    @NotBlank(groups = CreatePatientValidatorGroup.class, message = "Registered date is required")
+    @NotBlank(message = "Registered date is required")
     @JsonProperty("registered_date")
     private String registeredDate;
 }
