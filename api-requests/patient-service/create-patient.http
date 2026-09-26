@@ -3,10 +3,10 @@ POST http://localhost:4000/patients
 Content-Type: application/json
 
 {
-  "name": "Ekrem",
+  "name": "Ekrem with billing account",
   "sur_name": "Lale",
   "gender": "Male",
-  "email": "ekrem@gmail.com",
+  "email": "ekrem2@gmail.com",
   "address": "123 main street22",
   "date_of_birth": "2001-07-19",
   "registered_date": "2026-07-25"

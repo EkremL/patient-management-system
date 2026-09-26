@@ -1,0 +1,15 @@
+GRPC localhost:9001/BillingService/CreateBillingAccount
+Content-Type: application/grpc
+
+{
+   "patientId": "12333",
+   "name": "John",
+   "surName": "Doe",
+   "email": "john.doe@example.com"
+}
+
+
+# IntelliJ IDEA 2025.1.3 has a gRPC reflection issue,
+# so we can use grpcurl from the terminal to test the endpoint.
+# terminal command
+#grpcurl --% -plaintext -d "{\"patientId\":\"12333\",\"name\":\"John\",\"surName\":\"Doe\",\"email\":\"john.doe@example.com\"}" localhost:9001 BillingService/CreateBillingAccount
