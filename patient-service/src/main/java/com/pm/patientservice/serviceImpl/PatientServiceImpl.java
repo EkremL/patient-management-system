@@ -9,6 +9,7 @@ import com.pm.patientservice.entities.Patient;
 import com.pm.patientservice.exception.ConflictException;
 import com.pm.patientservice.exception.NotFoundException;
 import com.pm.patientservice.grpc.BillingServiceGrpcClient;
+import com.pm.patientservice.kafka.KafkaProducer;
 import com.pm.patientservice.mapper.PatientMapper;
 import com.pm.patientservice.repository.PatientRepository;
 import com.pm.patientservice.service.PatientService;
@@ -26,6 +27,7 @@ public class PatientServiceImpl implements PatientService {
     private final PatientRepository patientRepository;
     private final PatientMapper patientMapper;
     private final BillingServiceGrpcClient billingServiceGrpcClient;
+    private final KafkaProducer  kafkaProducer;
 
     @Override
     public List<PatientResponseDto> getPatients() {
@@ -43,6 +45,9 @@ public class PatientServiceImpl implements PatientService {
 
         //grpc billing service
         billingServiceGrpcClient.createBillingAccount(patient.getId().toString(), patient.getName(), patient.getSurName(), patient.getEmail());
+
+        //kafka
+        kafkaProducer.sendEvent(saved);
 
         return patientMapper.toCreateResponseDto(saved);
     }

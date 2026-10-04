@@ -3,13 +3,13 @@ POST http://localhost:4000/patients
 Content-Type: application/json
 
 {
-  "name": "Ekrem with billing account",
+  "name": "Ekrem kafka created test",
   "sur_name": "Lale",
   "gender": "Male",
-  "email": "ekrem2@gmail.com",
+  "email": "ekrem3@gmail.com",
   "address": "123 main street22",
   "date_of_birth": "2001-07-19",
-  "registered_date": "2026-07-25"
+  "registered_date": "2026-10-03"
 }
 
 ###
