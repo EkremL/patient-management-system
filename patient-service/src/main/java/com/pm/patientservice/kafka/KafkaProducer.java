@@ -1,5 +1,5 @@
 package com.pm.patientservice.kafka;
-import com.pm.patientservice.entities.Patient;
+import com.pm.patientservice.model.Patient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;

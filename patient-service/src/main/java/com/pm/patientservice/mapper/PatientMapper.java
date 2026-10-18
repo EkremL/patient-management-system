@@ -5,7 +5,7 @@ import com.pm.patientservice.dto.request.PatientUpdateRequestDto;
 import com.pm.patientservice.dto.response.PatientCreateResponseDto;
 import com.pm.patientservice.dto.response.PatientResponseDto;
 import com.pm.patientservice.dto.response.PatientUpdateResponseDto;
-import com.pm.patientservice.entities.Patient;
+import com.pm.patientservice.model.Patient;
 import org.mapstruct.*;
 
 import java.util.List;

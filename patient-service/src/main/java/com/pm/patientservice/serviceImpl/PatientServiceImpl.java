@@ -5,7 +5,6 @@ import com.pm.patientservice.dto.request.PatientUpdateRequestDto;
 import com.pm.patientservice.dto.response.PatientCreateResponseDto;
 import com.pm.patientservice.dto.response.PatientResponseDto;
 import com.pm.patientservice.dto.response.PatientUpdateResponseDto;
-import com.pm.patientservice.entities.Patient;
 import com.pm.patientservice.exception.ConflictException;
 import com.pm.patientservice.exception.NotFoundException;
 import com.pm.patientservice.grpc.BillingServiceGrpcClient;
@@ -15,7 +14,6 @@ import com.pm.patientservice.repository.PatientRepository;
 import com.pm.patientservice.service.PatientService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
